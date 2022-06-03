@@ -9,7 +9,7 @@ public class ShuffleController : MonoBehaviour
         System.Random rng = new System.Random();
         Card[,] generatedDeck = deck.cards;
 
-        printDeck(generatedDeck, "before ");
+        printDeck(generatedDeck, "BEFORE");
 
         int lengthRow = generatedDeck.GetLength(1);
         for (int i = generatedDeck.Length - 1; i > 0; i--){
@@ -25,7 +25,7 @@ public class ShuffleController : MonoBehaviour
             generatedDeck[j0, j1] = temp;
         }
 
-        printDeck(generatedDeck, "after ");
+        printDeck(generatedDeck, "AFTER");
     }
 
     private void printDeck(Card[,] generatedDeck, string message){
@@ -34,8 +34,8 @@ public class ShuffleController : MonoBehaviour
         
         for (int suitIndex = 0; suitIndex < NUM_SUITS; suitIndex++) {
             for (int valueIndex = 0; valueIndex < NUM_VALUES; valueIndex++) {
-                Debug.Log(message + "" + generatedDeck[suitIndex, valueIndex].value);
-                Debug.Log(message + "" + generatedDeck[suitIndex, valueIndex].suit);
+                Debug.Log(message + " " + generatedDeck[suitIndex, valueIndex].value);
+                Debug.Log(message + " " + generatedDeck[suitIndex, valueIndex].suit);
             }
         }
     }
