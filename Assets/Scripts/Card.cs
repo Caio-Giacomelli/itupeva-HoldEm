@@ -7,8 +7,7 @@ public enum Value {
     EIGHT, NINE, TEN, JACK, QUEEN, KING
 }
 
-public class Card
-{
+public class Card {
     public Suit suit;
     public Value value;
 
