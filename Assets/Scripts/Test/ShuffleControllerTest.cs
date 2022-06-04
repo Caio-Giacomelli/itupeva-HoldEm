@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShuffleControllerTest : MonoBehaviour
 {
     private static int TEST_RECURRENCE = 100000;
+    private static int SUIT_POSITION_REFERENCE = 3;
+    private static int VALUE_POSITION_REFERENCE = 9;
     private ShuffleController _shuffleController = new ShuffleController();
     
     public void executeShuffleTest(){
@@ -16,8 +18,8 @@ public class ShuffleControllerTest : MonoBehaviour
 
         for (int i = 0; i < TEST_RECURRENCE; i++){ 
             Card[,] generatedDeck = _shuffleController.shuffleCards();
-            lValues[i] = (int) generatedDeck[3, 9].value;
-            lSuits[i] = (int) generatedDeck[3, 9].suit;
+            lValues[i] = (int) generatedDeck[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE].value;
+            lSuits[i] = (int) generatedDeck[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE].suit;
         }
 
         Value[] values = (Value[]) System.Enum.GetValues(typeof(Value));
