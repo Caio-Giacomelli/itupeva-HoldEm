@@ -573,7 +573,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 566500510}
         m_TargetAssemblyTypeName: ShuffleController, Assembly-CSharp
-        m_MethodName: shuffleCards
+        m_MethodName: shuffleCardButtonAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

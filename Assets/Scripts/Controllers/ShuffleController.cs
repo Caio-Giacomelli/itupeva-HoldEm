@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShuffleController : MonoBehaviour
-{
-    public void shuffleCards(){
+public class ShuffleController : MonoBehaviour {    
+    
+    public Card[,] shuffleCards(){
         Deck deck = new Deck();
         System.Random rng = new System.Random();
         Card[,] generatedDeck = deck.cards;
-
-        printDeck(generatedDeck, "BEFORE");
 
         int lengthRow = generatedDeck.GetLength(1);
         for (int i = generatedDeck.Length - 1; i > 0; i--){
@@ -25,7 +23,11 @@ public class ShuffleController : MonoBehaviour
             generatedDeck[j0, j1] = temp;
         }
 
-        printDeck(generatedDeck, "AFTER");
+        return generatedDeck;
+    }
+
+    public void shuffleCardButtonAction(){
+        Card[,] generatedDeck = shuffleCards();
     }
 
     private void printDeck(Card[,] generatedDeck, string message){
