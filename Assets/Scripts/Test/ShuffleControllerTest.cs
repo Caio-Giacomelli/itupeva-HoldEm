@@ -17,10 +17,10 @@ public class ShuffleControllerTest : MonoBehaviour
         int[] lCountSuits = new int[4];
 
         for (int i = 0; i < TEST_RECURRENCE; i++){ 
-            Deck deck = new Deck();
+            Deck deck = new Deck(new Sprite[52]);
             Deck shuffledDeck = _shuffleController.shuffleCards(deck);
-            lValues[i] = (int) shuffledDeck._cards[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE].value;
-            lSuits[i] = (int) shuffledDeck._cards[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE].suit;
+            lValues[i] = (int) shuffledDeck._cards[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE]._value;
+            lSuits[i] = (int) shuffledDeck._cards[SUIT_POSITION_REFERENCE, VALUE_POSITION_REFERENCE]._suit;
         }
 
         Value[] values = (Value[]) System.Enum.GetValues(typeof(Value));

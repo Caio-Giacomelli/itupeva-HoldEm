@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 public enum Suit {
     HEARTS, SPADES, DIAMONDS, CLUBS
 }
@@ -8,17 +11,19 @@ public enum Value {
 }
 
 public class Card {
-    public Suit suit;
-    public Value value;
-    public bool withdrew;
+    public Suit _suit;
+    public Value _value;
+    public Sprite _cardSprite;
+    public bool _withdrew;
 
-    public Card (Suit suit, Value value){
-        this.suit = suit;
-        this.value = value;
-        this.withdrew = false;
+    public Card (Suit suit, Value value, Sprite cardSprite){
+        this._suit = suit;
+        this._value = value;
+        this._cardSprite = cardSprite;
+        this._withdrew = false;
     }
 
     public string getCardString(){
-        return this.value  + " of " + this.suit;
+        return this._value  + " of " + this._suit;
     }
 }
