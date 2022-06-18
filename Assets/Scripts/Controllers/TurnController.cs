@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Refactor to round controller
-public class GameController : MonoBehaviour{
-    [Header("Table Configuratation")]
+public class TurnController : MonoBehaviour{
+    [Header("Game Configuratation")]
     [SerializeField] public int _playerNumber = 1;
 
     private ShuffleController _shuffleController;
     public Hand[] _playerHands;
+    public Table _table;
     public Deck _deck;
 
     void Start(){
@@ -42,10 +43,13 @@ public class GameController : MonoBehaviour{
     }
 
     public void dealTable(){
-        //To Implement
+        Card[] cardsToDeal = this._deck.dealCards(5);
+        _table = new Table(cardsToDeal);
     }
 
     public void printTable(){
-        //To Implement
+        for (int i = 0; i < 5; i++){
+            Debug.Log("Table: " + _table._cards[i].getCardString());
+        }
     }
 }

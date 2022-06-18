@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hand {
-    public Card[] _cards;
+    public Card[] _cards {get; private set;}
     public int _playerId;
 
     public Hand(Card[] handCards, int playerId) {
